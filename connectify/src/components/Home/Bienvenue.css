@@ -1,0 +1,38 @@
+/* src/components/Home/Bienvenue.css */
+.bienvenue {
+    background: url('../../assets/Page Accueil/fd_bienvenu.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Hauteur de 100% de la fenêtre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.bienvenue-content {
+    height: 100%;
+    width: 100%;
+    background: rgba(218, 202, 59, 0.7); /* Fond semi-transparent pour la section de bienvenue */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff; /* Couleur du texte en blanc pour la visibilité */
+}
+  
+.bienvenue h2 {
+    margin-top: 0;
+    font-family: 'Gravitas One', sans-serif;
+    font-size: 9em; /* Taille de la police relative */
+    line-height: 1.2; /* Hauteur de ligne relative */
+    color: #216249;
+}
+  
+.bienvenue p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em; /* Taille de la police relative */
+    line-height: 1.4; /* Hauteur de ligne relative */
+}

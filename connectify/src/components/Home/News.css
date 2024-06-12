@@ -1,0 +1,81 @@
+.news {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background: #000000BD;
+    border-radius: 10px;
+}
+
+.newsletter {
+    background: linear-gradient(135deg, #000000BD, #000000BD);
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.newsletter h2 {
+    font-family: 'Gravitas One';
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 82.68px;
+    text-align: left;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #daca3bff;
+    font-weight: bold;
+}
+
+.newsletter p {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: left;
+    color: white;
+
+}
+  
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: #daca3bff;
+}
+
+.newsletter-form button {
+    padding: 15px 40px;
+    background-color: #1d5a43;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+.newsletter-form button:hover {
+    background-color: #c9b032;
+    transform: translateY(-2px);
+}

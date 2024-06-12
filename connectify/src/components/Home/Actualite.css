@@ -1,0 +1,36 @@
+.actualite {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.image {
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%; /* Pour que l'image ne dépasse pas la largeur de son conteneur */
+}
+
+.contenu {
+    background: #20835D;
+}
+
+.contenu h3 {
+    margin-top: 3em;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Gravitas One';
+    font-size: 3em;
+    color: #DACA3B;
+}
+
+.contenu p {
+    margin: 9em;
+    text-align: center;
+    font-family: 'Inter';
+    line-height: 1.5;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1em;
+}
