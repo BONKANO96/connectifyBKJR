@@ -58,9 +58,22 @@
     border-color: #daca3bff; /* Bordure visible au survol ou au focus */
 }
 
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .navbar-item.active {
-    color: #daca3bff;
-  }
+    background-color: #333;
+    color: #fff;
+    border-color: #daca3b;
+}
+
+.navbar-item:hover,
+.navbar-item:focus {
+  color: #daca3b;
+  border-color: #daca3b;
+}
 
 .connectify-text {
     position: absolute;

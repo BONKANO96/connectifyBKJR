@@ -2,6 +2,8 @@ import React from 'react';
 import './Bienvenue.css';
 import './News.css';
 import './Contact';
+import './Actualite.css'
+
 
 function News() {
     return (

@@ -7,9 +7,9 @@ import Footer from '../Mise_en_page/Footer';
 function Home() {
   return (
     <body>
-        <Header />
-        <Main />
-        <Footer />
+      <Header />
+      <Main />
+      <Footer />
     </body>
   );
 }

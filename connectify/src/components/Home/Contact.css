@@ -1,7 +1,11 @@
 .contenu_contact {
     background: #20835D;
-    padding: 3em;
-}
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
 .contenu_contact div {
     background: #1D5A43;
@@ -10,26 +14,34 @@
 }
 
 .contenu_contact h3 {
-    margin-top: 3em;
-    font-size: 1.5em;
+    margin-top: 0;
+    font-size: 3em;
     text-align: center;
     font-family: 'Gravitas One';
-    font-size: 3em;
     color: #DACA3B;
+}
+
+.contact {
+    background: #1D5A43;
+    border-radius: 4px;
+    padding: 2em;
+    width: 100%;
+    max-width: 529px;
+    margin: 0 auto;
 }
 
 
 .contact-form {
+    display: grid;
+    gap: 0;
+}
+  
+.form-group {
     display: flex;
     flex-direction: column;
 }
   
-.form-group {
-    margin-bottom: 15px;
-}
-  
 .form-group label {
-    display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: white;
@@ -44,7 +56,7 @@
     font-size: 1em;
     background: #fff;
     transition: border-color 0.3s;
-}
+  }
   
 .form-group input:focus,
 .form-group textarea:focus {
@@ -61,7 +73,8 @@
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s;
-    align-self: center;
+    position: relative;
+    left: 35%;
 }
   
 .submit-button:hover {
