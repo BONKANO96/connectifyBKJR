@@ -13,7 +13,7 @@ const Header = () => {
         </video>
         
       <div className="header-content">
-            <div className="logo">
+            <div className="logo_header">
                 <h1 style={{ color: "#daca3bff",  fontFamily: "Chicle" }}>Connectify</h1>
             </div>
             <nav className="navbar">

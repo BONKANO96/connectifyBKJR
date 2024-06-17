@@ -26,8 +26,10 @@ function SignIn() {
   return (
     <div>
       <section className="actualite">
+        
         <div className="image">
-          <Logo className="logo"/>
+          <Logo className="logo na"/>
+          
           <img src={connexionImage} alt="Connexion" />
         </div>
         <div className="contenu_contact">
