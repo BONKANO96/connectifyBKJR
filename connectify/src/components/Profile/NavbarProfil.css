@@ -1,0 +1,11 @@
+.navbar{
+    position: absolute;
+    left: 75%;
+    top: 3%;
+}
+
+.header_profil{
+    padding-top: 1%;
+    background: #20835D;
+    padding-bottom: 1%;
+}
