@@ -8,6 +8,7 @@ import HeaderProfil from './HeaderProfil';
 import profileImage from '../../assets/Page profil/banner_profil.png';
 import userProfilePhoto from '../../assets/Page profil/hexatar_230720ry32sx.png';
 import Footer from '../Mise_en_page/Footer.js';
+import { NavLink} from 'react-router-dom';
 
 
 function Profile() {
@@ -25,20 +26,13 @@ function Profile() {
           </div>
       </div>
       <div className="gallery-menu">
-        <button>ALL</button>
-        <button>Walls</button>
-        <button>Gallery</button>
-        <button>Video</button>
-        <button>Music</button>
+        <button><NavLink to="/Profile" activeClassName="active">ALL</NavLink></button>
+        <button><NavLink to="/MurPublication" activeClassName="active">Walls</NavLink></button>
+        <button><NavLink to="/PhotoGallery" activeClassName="active">Gallery</NavLink></button>
+        <button><NavLink to="/VideoGallery" activeClassName="active">Video</NavLink></button>
+        <button><NavLink to="/MusicGallery" activeClassName="active">Music</NavLink></button>
       </div>
-      <PhotoGallery />
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      
       <Footer />
     </div>
   );

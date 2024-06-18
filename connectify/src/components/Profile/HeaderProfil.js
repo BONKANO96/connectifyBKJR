@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Mise_en_page/Header.css';
+import './MurPublication.css'
 
 const HeaderProfil = () => {
     const currentTab = 'Acceuil'; 

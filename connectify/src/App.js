@@ -7,6 +7,10 @@ import Profile from './components/Profile/Profile';
 import Contact from './components/Home/Contact';
 import { AuthProvider } from './context_authentification/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import PhotoGallery from './components/Profile/PhotoGallery';
+import MurPublication from './components/Profile/MurPublication';
+import VideoGallery from './components/Profile/VideoGallery';
+import MusicGallery from './components/Profile/MusicGallery';
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/PhotoGallery" element={<PhotoGallery />} />
+          <Route path="/MurPublication" element={<MurPublication />} />
+          <Route path="/VideoGallery" element={<VideoGallery />} />
+          <Route path="/MusicGallery" element={<MusicGallery />} />
         </Routes>
       </Router>
     </AuthProvider>
