@@ -11,6 +11,7 @@ import PhotoGallery from './components/Profile/PhotoGallery';
 import MurPublication from './components/Profile/MurPublication';
 import VideoGallery from './components/Profile/VideoGallery';
 import MusicGallery from './components/Profile/MusicGallery';
+import PrivateRoute from './components/Auth/PrivateRoute';
 
 function App() {
   return (
@@ -21,11 +22,12 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/Profile" element={<Profile />} />
           <Route path="/PhotoGallery" element={<PhotoGallery />} />
           <Route path="/MurPublication" element={<MurPublication />} />
           <Route path="/VideoGallery" element={<VideoGallery />} />
           <Route path="/MusicGallery" element={<MusicGallery />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, navigate} from 'react-router-dom';
 import { auth } from '../../firebase/firebaseConfig';
 import Logo from '../Mise_en_page/Logo';
 import Onglets from '../Mise_en_page/Onglets';
@@ -12,12 +12,14 @@ import Footer from '../Mise_en_page/Footer';
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useNavigate();
 
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert('User signed in successfully');
+      history('/profile');
     } catch (error) {
       alert(error.message);
     }

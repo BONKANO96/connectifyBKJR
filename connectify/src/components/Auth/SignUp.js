@@ -1,31 +1,35 @@
 import connexionImage from '../../assets/Page Inscription/pexels-budgeron-bach-5158233.jpg';
 
-import React, { useState } from 'react';
-import { signUpWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context_authentification/AuthContext';
 import { auth } from '../../firebase/firebaseConfig';
 import Logo from '../Mise_en_page/Logo'; // Chemin correct vers Logo.js
 import Onglets from '../Mise_en_page/Onglets'; // Chemin correct vers Onglets.js
 import './SignUp.css';
 import Footer from '../Mise_en_page/Footer'; // Chemin correct vers Footer.js
 
-function SignUp() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const SignUp = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [gender, setGender] = useState('');
+  const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    // Mettez ici votre logique pour créer un compte utilisateur avec Firebase ou tout autre service d'authentification
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
     try {
-      // Exemple avec Firebase (vous devrez remplacer par votre propre logique)
-      // await createUserWithEmailAndPassword(auth, email, password);
-      alert('User signed up successfully');
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate('/SignIn');
     } catch (error) {
-      alert(error.message);
+      console.error("Error signing up:", error);
     }
   };
 
@@ -54,7 +58,7 @@ function SignUp() {
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email :</label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" id="email" name="email" required placeholder="Entrez votre email" />
               </div>
               <div className="radio-group">
                 <label htmlFor="gender">Genre :
@@ -71,11 +75,11 @@ function SignUp() {
               </div>
               <div className="form-group">
                 <label htmlFor="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe" />
               </div>
               <div className="form-group">
                 <label htmlFor="confirmPassword">Confirmez le mot de passe :</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmez votre mot de passe" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmez votre mot de passe" />
               </div>
               <button type="submit" className="submit-button"><Link to="/Profile" style={{color:'white', textDecoration:'none' }}>Valider</Link></button>
             </form>
