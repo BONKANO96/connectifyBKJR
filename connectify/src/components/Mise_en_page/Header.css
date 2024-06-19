@@ -32,6 +32,11 @@
     opacity: 1; /* Assurez-vous que l'opacité est définie */
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
@@ -71,8 +76,8 @@
 
 .navbar-item:hover,
 .navbar-item:focus {
-  color: #daca3b;
-  border-color: #daca3b;
+    color: #daca3b;
+    border-color: #daca3b;
 }
 
 .connectify-text {
@@ -89,14 +94,98 @@
     z-index: 2;
 }
 
-/* Media queries pour des ajustements spécifiques aux différentes tailles d'écran */
-@media (max-width: 700px) {
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #daca3bff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.open {
+    display: flex;
+}
+
+@media (max-width: 1200px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-content {
+        padding: 15px;
+    }
+
+    .logo_header h1 {
+        font-size: 1.8em;
+    }
+
+    .navbar ul li {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .navbar.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+    }
+
     .navbar ul {
         flex-direction: column;
         gap: 10px;
     }
 
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
     .connectify-text {
-        font-size: 15vw; /* Ajuste la taille du texte pour les écrans plus petits */
+        font-size: 10vw; /* Ajuste la taille du texte pour les écrans plus petits */
+    }
+}
+
+@media (max-width: 576px) {
+    .header-content {
+        padding: 10px;
+    }
+
+    .logo_header h1 {
+        font-size: 1.5em;
+    }
+
+    .navbar ul li {
+        font-size: 0.8em;
+    }
+
+    .connectify-text {
+        font-size: 8vw; /* Ajuste la taille du texte pour les très petits écrans */
     }
 }

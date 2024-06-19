@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
+    padding: 2em;
 }
 
 .contenu_qsn h3 {
@@ -24,4 +25,60 @@
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-  }  
+}
+
+/* Media queries pour la mise en page responsive */
+@media (max-width: 1200px) {
+    .contenu_qsn h3 {
+        font-size: 2.5em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .contenu_qsn p {
+        font-size: 1.1em; /* Ajuste la taille de la police pour le paragraphe */
+    }
+}
+
+@media (max-width: 992px) {
+    .contenu_qsn {
+        padding: 1.5em;
+    }
+
+    .contenu_qsn h3 {
+        font-size: 2em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+
+    .contenu_qsn p {
+        font-size: 1em; /* Ajuste la taille de la police pour le paragraphe */
+        padding: 0 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenu_qsn {
+        padding: 1em;
+    }
+
+    .contenu_qsn h3 {
+        font-size: 1.8em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .contenu_qsn p {
+        font-size: 0.9em; /* Ajuste la taille de la police pour le paragraphe */
+        padding: 0 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenu_qsn h3 {
+        font-size: 1.5em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
+
+    .contenu_qsn p {
+        font-size: 0.8em; /* Ajuste la taille de la police pour le paragraphe */
+        padding: 0 0.5em;
+    }
+
+    .contenu_qsn {
+        padding: 0.5em;
+    }
+}

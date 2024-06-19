@@ -6,9 +6,6 @@
     position: absolute;
 }
 
-
-
-
 .actualite {
     position: relative;
     z-index: 1; /* Assure que le contenu est devant la vidéo */
@@ -42,6 +39,11 @@
     margin-top: -29%;
     background: #20835D;
     gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
 }
 
 .contenu_contact h3 {
@@ -92,4 +94,72 @@
 
 .submit-button:hover {
     background-color: #DACA3B;
+}
+
+/* Media queries pour la mise en page responsive */
+@media (max-width: 1200px) {
+    .contenu_contact h3 {
+        font-size: 1.8em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px; /* Réduit le padding pour les écrans plus petits */
+    }
+
+    .submit-button {
+        padding: 8px 16px; /* Réduit le padding pour les boutons sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 992px) {
+    .contenu_contact {
+        padding: 1.5em;
+    }
+
+    .contenu_contact h3 {
+        font-size: 1.6em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+
+    .image img {
+        height: auto; /* Permet à l'image de s'adapter à la hauteur du conteneur */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenu_contact {
+        padding: 1em;
+        margin-top: 0; /* Supprime la marge supérieure pour les écrans plus petits */
+    }
+
+    .contenu_contact h3 {
+        font-size: 1.4em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .paragraphe {
+        margin-top: 10px; /* Réduit la marge supérieure pour les écrans plus petits */
+    }
+
+    .signup-link {
+        font-size: 0.9em; /* Réduit la taille de la police pour le lien */
+    }
+}
+
+@media (max-width: 576px) {
+    .contenu_contact {
+        padding: 0.5em;
+    }
+
+    .contenu_contact h3 {
+        font-size: 1.2em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 6px; /* Réduit le padding pour les très petits écrans */
+    }
+
+    .submit-button {
+        padding: 6px 12px; /* Réduit le padding pour les boutons sur les très petits écrans */
+    }
 }

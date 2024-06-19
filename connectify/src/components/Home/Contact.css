@@ -1,16 +1,14 @@
 .contenu_contact {
     background: #20835D;
-    padding: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .contenu_contact div {
     background: #1D5A43;
     border-radius: 4px;
-    padding: 1.5em;
 }
 
 .contenu_contact h3 {
@@ -30,23 +28,22 @@
     margin: 0 auto;
 }
 
-
 .contact-form {
     display: grid;
     gap: 0;
 }
-  
+
 .form-group {
     display: flex;
     flex-direction: column;
 }
-  
+
 .form-group label {
     margin-bottom: 5px;
     font-weight: bold;
     color: white;
 }
-  
+
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -56,13 +53,13 @@
     font-size: 1em;
     background: #fff;
     transition: border-color 0.3s;
-  }
-  
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #333;
 }
-  
+
 .submit-button {
     width: 155px;
     padding: 15px;
@@ -76,7 +73,86 @@
     position: relative;
     left: 35%;
 }
-  
+
 .submit-button:hover {
     background: #20835D;
+}
+
+/* Media queries pour la mise en page responsive */
+@media (max-width: 1200px) {
+    .contenu_contact h3 {
+        font-size: 2.5em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .submit-button {
+        font-size: 1em; /* Ajuste la taille de la police pour le bouton */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contenu_contact h3 {
+        font-size: 2em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+
+    .submit-button {
+        width: 100%;
+        left: 0;
+    }
+
+    .contact {
+        padding: 1.5em;
+    }
+
+    .contenu_contact div {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenu_contact {
+        padding: 1em;
+    }
+
+    .contact {
+        padding: 1em;
+    }
+
+    .contenu_contact h3 {
+        font-size: 1.8em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .contenu_contact div {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenu_contact h3 {
+        font-size: 1.5em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .contenu_contact {
+        padding: 0.5em;
+    }
+
+    .contact {
+        padding: 0.5em;
+    }
+
+    .contenu_contact div {
+        padding: 0.5em;
+    }
 }

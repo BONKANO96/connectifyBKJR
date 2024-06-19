@@ -25,14 +25,55 @@
 .bienvenue h2 {
     margin-top: 0;
     font-family: 'Gravitas One', sans-serif;
-    font-size: 9em; /* Taille de la police relative */
-    line-height: 1.2; /* Hauteur de ligne relative */
+    font-size: 9em; /* Taille de la police */
+    line-height: 1.2; /* Hauteur de ligne */
     color: #216249;
 }
   
 .bienvenue p {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1.5em; /* Taille de la police relative */
-    line-height: 1.4; /* Hauteur de ligne relative */
+    font-size: 1.5em; /* Taille de la police */
+    line-height: 1.4; /* Hauteur de ligne */
+}
+
+/* Media queries pour la mise en page responsive */
+@media (max-width: 1200px) {
+    .bienvenue h2 {
+        font-size: 7em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .bienvenue p {
+        font-size: 1.2em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+}
+
+@media (max-width: 992px) {
+    .bienvenue h2 {
+        font-size: 6em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+
+    .bienvenue p {
+        font-size: 1em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .bienvenue h2 {
+        font-size: 5em; /* Ajuste la taille de la police pour les petits écrans */
+    }
+
+    .bienvenue p {
+        font-size: 0.9em; /* Ajuste la taille de la police pour les petits écrans */
+    }
+}
+
+@media (max-width: 576px) {
+    .bienvenue h2 {
+        font-size: 4em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
+
+    .bienvenue p {
+        font-size: 0.8em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
 }

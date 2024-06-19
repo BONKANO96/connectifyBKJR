@@ -5,7 +5,6 @@
     height: 145vh;
 }
 
-
 .image {
     overflow: hidden;
 }
@@ -30,7 +29,6 @@
     font-size: 3em;
     text-align: center;
     font-family: 'Gravitas One';
-    font-size: 3em;
     color: #DACA3B;
 }
 
@@ -42,4 +40,58 @@
     color: #FFFFFF;
     font-size: 1.2em;
     padding: 0 2em;
+}
+
+/* Media queries pour la mise en page responsive */
+@media (max-width: 1200px) {
+    .contenu h3 {
+        font-size: 2.5em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+
+    .contenu p {
+        font-size: 1em; /* Ajuste la taille de la police pour les écrans plus petits */
+    }
+}
+
+@media (max-width: 992px) {
+    .actualite {
+        grid-template-columns: 1fr; /* Affiche une seule colonne pour les écrans moyens */
+        height: auto;
+    }
+
+    .contenu h3 {
+        font-size: 2em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+
+    .contenu p {
+        font-size: 0.9em; /* Ajuste la taille de la police pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenu {
+        padding: 2em; /* Réduit les marges internes pour les petits écrans */
+    }
+
+    .contenu h3 {
+        font-size: 1.8em; /* Ajuste la taille de la police pour les petits écrans */
+    }
+
+    .contenu p {
+        font-size: 0.8em; /* Ajuste la taille de la police pour les petits écrans */
+    }
+}
+
+@media (max-width: 576px) {
+    .contenu {
+        padding: 1em; /* Réduit davantage les marges internes pour les très petits écrans */
+    }
+
+    .contenu h3 {
+        font-size: 1.5em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
+
+    .contenu p {
+        font-size: 0.7em; /* Ajuste la taille de la police pour les très petits écrans */
+    }
 }

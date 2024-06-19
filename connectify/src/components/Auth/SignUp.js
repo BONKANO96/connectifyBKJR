@@ -1,5 +1,6 @@
 import connexionImage from '../../assets/Page Inscription/pexels-budgeron-bach-5158233.jpg';
-
+import * as yup from 'yup';
+import DOMPurify from 'dompurify';
 import React, { useState, useRef } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -18,9 +19,15 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
+  const schema = yup.object().shape({
+    email: yup.string().email('Email invalide').required('Email requis'),
+    password: yup.string().min(6, 'Le mot de passe doit contenir au moins 6 caractères').required('Mot de passe requis'),
+    passwordConfirm: yup.string().oneOf([yup.ref('password'), null], 'Les mots de passe ne correspondent pas')
+  });
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
@@ -43,48 +50,72 @@ const SignUp = () => {
         </div>
         <div className="contenu_contact">
           <Onglets className="onglets"/>
-          <h3>Inscription</h3>
-          <div className="contact">
-            <form className="contact-form" onSubmit={handleSignUp}>
-              <div className="form-group name-group">
-                <div className="form-group-inner">
-                  <label htmlFor="firstName">Prénom :</label>
-                  <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div className="form-group-inner">
-                  <label htmlFor="lastName">Nom :</label>
-                  <input type="text" id="lastName" name="lastName" required placeholder="Votre nom" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                </div>
+          <div className="signup-form-container">
+            <h2>Inscription</h2>
+            <form onSubmit={handleSignUp}>
+              <div className="input-group">
+                <label>Nom :</label>
+                <input 
+                  type="text" 
+                  value={firstName} 
+                  onChange={(e) => setFirstName(e.target.value)} 
+                  placeholder="Entrez votre nom..." 
+                />
+                <label>Prénom :</label>
+                <input 
+                  type="text" 
+                  value={lastName} 
+                  onChange={(e) => setLastName(e.target.value)} 
+                  placeholder="Entrez votre prénom..." 
+                />
               </div>
-              <div className="form-group">
-                <label htmlFor="email">Email :</label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre email" />
+              <div className="input-group">
+                <label>Email :</label>
+                <input 
+                  type="email" 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  placeholder="Entrez votre email..." 
+                />
               </div>
-              <div className="radio-group">
-                <label htmlFor="gender">Genre :
-                  <label>
-                    <input type="radio" id="genderMale" name="gender" value="male" checked={gender === 'male'} onChange={(e) => setGender(e.target.value)} />
-                    Homme
-                  </label>
-
-                  <label>
-                    <input type="radio" id="genderFemale" name="gender" value="female" checked={gender === 'female'} onChange={(e) => setGender(e.target.value)} />
-                    Femme
-                  </label>
-                </label>
+              <div className="input-group">
+                <label>Genre :</label>
+                <input 
+                  type="radio" 
+                  value="Homme" 
+                  checked={gender === 'Homme'} 
+                  onChange={(e) => setGender(e.target.value)} 
+                /> Homme
+                <input 
+                  type="radio" 
+                  value="Femme" 
+                  checked={gender === 'Femme'} 
+                  onChange={(e) => setGender(e.target.value)} 
+                /> Femme
               </div>
-              <div className="form-group">
-                <label htmlFor="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe" />
+              <div className="input-group">
+                <label>Mot de passe :</label>
+                <input 
+                  type="password" 
+                  value={password} 
+                  onChange={(e) => setPassword(e.target.value)} 
+                  placeholder="Entrez votre mot de passe..." 
+                />
               </div>
-              <div className="form-group">
-                <label htmlFor="confirmPassword">Confirmez le mot de passe :</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmez votre mot de passe" />
+              <div className="input-group">
+                <label>Vérification de mot de passe :</label>
+                <input 
+                  type="password" 
+                  value={confirmPassword} 
+                  onChange={(e) => setConfirmPassword(e.target.value)} 
+                  placeholder="Entrez votre mot de passe..." 
+                />
               </div>
-              <button type="submit" className="submit-button"><Link to="/Profile" style={{color:'white', textDecoration:'none' }}>Valider</Link></button>
+              <button type="submit" className="submit-button"><Link to="/SignIn" style={{color:'white', textDecoration:'none' }}>Valider</Link></button>
             </form>
+            <p className='paragraphe'>Déja inscrit ? <Link to="/SignIn" className="signup-link">Connectez vous !</Link></p>
           </div>
-          <p className='paragraphe'>Déja inscrit ? <Link to="/signin" className="signup-link">Connectez vous !</Link></p>
+          
         </div>
       </section>
       <Footer />
@@ -93,3 +124,10 @@ const SignUp = () => {
 }
 
 export default SignUp;
+
+
+
+
+
+
+
